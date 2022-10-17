@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <div class="content">
+          <img src="marvel.png" alt="img1" />
+          <video src="video/1564676115-marvel.mp4" autoplay loop></video>
+          <p>advhbaisano</p>
+        </div>
+      </div>
+      <div class="box">
+        <div class="content">
+          <img src="dc.png" alt="img1" />
+          <video src="video/dc.mp4" autoplay loop></video>
+          <p>advhbaisano</p>
+        </div>
+      </div>
+      <div class="box">
+        <div class="content">
+          <img src="prime.png" alt="img1" />
+          <video src="video/prime1.mp4" autoplay loop></video>
+          <p>advhbaisano</p>
+        </div>
+      </div>
+      <div class="box">
+        <div class="content">
+          <img src="netflix.png" alt="img1" />
+          <video src="video/netflix.mp4" autoplay loop></video>
+          <p>advhbaisano</p>
+        </div>
+      </div>
+      <div class="box">
+        <div class="content">
+          <img src="disney.png" alt="img1" />
+          <video src="video/disney.mp4" autoplay loop></video>
+        </div>
+      </div>
+      <div class="box">
+        <div class="content">
+          <img src="hulu.png" alt="img1" />
+          <video src="video/hulu.mp4" autoplay loop></video>
+          <p>advhbaisano</p>
+        </div>
+      </div>
+      <div class="box">
+        <div class="content">
+          <img src="hbo.png" alt="img1" />
+          <video src="video/hbo.mp4" autoplay loop></video>
+          <p>advhbaisano</p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const videos = Array.from(document.getElementsByTagName("video"));
+    videos.forEach((video) => {
+      video.volume = 0;
+      video.play();
+    });
+
+    const boxes = Array.from(document.querySelectorAll(".box"));
+    const logo = document.getElementsByTagName("img");
+    boxes.forEach((box) => {
+      box.addEventListener("mouseover", function () {
+        const img = box.children[0].children[0];
+        img.style.opacity = 0;
+        img.style.transition = "all 0.5s ease";
+      });
+      box.addEventListener("mouseout", function () {
+        const img = box.children[0].children[0];
+        img.style.opacity = 1;
+        img.style.transition = "all 0.5s ease";
+      });
+    });
+  </script>
+</html>
